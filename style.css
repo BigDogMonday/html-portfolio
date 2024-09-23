@@ -1,0 +1,203 @@
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-areas:
+        'header header'
+        'nav main'
+        'footer footer';
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+@media (max-width: 1024px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'header'
+            'nav'
+            'main'
+            'footer';
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none; /* Hide the navigation bar on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Smaller text for mobile */
+    }
+
+    header, footer {
+        padding: 10px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .resume-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Header Section */
+header {
+    grid-area: header;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Sidebar Navigation */
+nav {
+    grid-area: nav;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* Sidebar Navigation Items */
+nav a {
+    color: #0073e6;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Section */
+main {
+    grid-area: main;
+    overflow-y: scroll;
+    padding: 20px;
+}
+
+/* Footer Section */
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Flexbox for Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.skills ul {
+    list-style-type: square;
+    width: 45%;
+    padding: 0;
+}
+
+/* Scaling on Hover for Skills */
+.skills li {
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    transition: transform 0.2s ease; /* Smooth scaling */
+}
+
+.skills li:hover {
+    transform: scale(1.05); /* Slight scale effect */
+}
+
+
+
+/* Projects Section using Flexbox */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.projects img {
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.projects img:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+/* Table Styling for Education & Experience */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+/* Float and Positioning for Project Images */
+.projects img {
+    float: left;
+    margin-right: 20px;
+}
+
+/* Contact Information */
+.contact {
+    position: relative;
+}
+
+.contact a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Resume Download Button */
+.resume-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-radius 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-button:hover {
+    background-color: #005bb5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
